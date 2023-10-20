@@ -15,7 +15,7 @@ data class KrxStock(
     val marketCap:String,
 ){
     fun setFluctuationSign(){
-        if (this.fluctuationRange.toInt() = 0) return
+        if (this.fluctuationRange.toInt() == 0) return
         if (this.fluctuationRange.toInt() > 0 ) {
             this.fluctuationSign = "+"
             return
