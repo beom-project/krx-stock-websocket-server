@@ -19,7 +19,7 @@ jobs:
       env:
         PAT_TOKEN: ${{ secrets.BEOM_PID_TOKEN }}
       run: |
-        curl -H "Authorization: token $PAT_TOKEN" -H "Accept: application/vnd.github.v3.raw" -o ./src/main/resources/application-prod.yaml.yaml https://raw.githubusercontent.com/beom-project/beom-properties/main/krx-stock-websocket-server-properties.yaml
+        curl -H "Authorization: token $PAT_TOKEN" -H "Accept: application/vnd.github.v3.raw" -o ./src/main/resources/application-prod.yaml https://raw.githubusercontent.com/beom-project/beom-properties/main/krx-stock-websocket-server-properties.yaml
     - name: check work dir
       run: ls ./src/main/resources
       
