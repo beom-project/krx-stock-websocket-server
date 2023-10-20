@@ -2,6 +2,7 @@ package com.bs.krxstockwebsocketserver.kafka.dto
 
 data class KrxStock(
     val ticker:String,
+    val name:String,
     val openPrice:String,
     val highestPrice:String,
     val lowestPrice:String,
