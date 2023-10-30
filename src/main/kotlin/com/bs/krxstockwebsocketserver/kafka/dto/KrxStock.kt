@@ -1,18 +1,21 @@
 package com.bs.krxstockwebsocketserver.kafka.dto
 
-data class KrxStock(
-    val ticker:String,
-    val name:String,
-    val openPrice:String,
-    val highestPrice:String,
-    val lowestPrice:String,
-    val closePrice:String,
-    val volume:String,
-    val fluctuationRange:String,
-    val fluctuationRate:String,
-    var fluctuationSign:String?="",
-    val tradingValue:String,
-    val marketCap:String,
+import com.fasterxml.jackson.annotation.JsonCreator
+import com.fasterxml.jackson.annotation.JsonProperty
+
+data class KrxStock @JsonCreator constructor(
+    @JsonProperty("ticker") val ticker: String,
+    @JsonProperty("name") val name: String,
+    @JsonProperty("openPrice") val openPrice: String,
+    @JsonProperty("highestPrice") val highestPrice: String,
+    @JsonProperty("lowestPrice") val lowestPrice: String,
+    @JsonProperty("closePrice") val closePrice: String,
+    @JsonProperty("volume") val volume: String,
+    @JsonProperty("fluctuationRange") val fluctuationRange: String,
+    @JsonProperty("fluctuationRate") val fluctuationRate: String,
+    @JsonProperty("fluctuationSign") var fluctuationSign: String? = "",
+    @JsonProperty("tradingValue") val tradingValue: String,
+    @JsonProperty("marketCap") val marketCap: String,
 ){
     fun setFluctuationSign(){
         if (this.fluctuationRange.toInt() == 0) return
